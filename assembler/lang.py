@@ -8,7 +8,17 @@
 # You should have received a copy of the GNU General Public License along with
 # the software.  If not, see <http://www.gnu.org/licenses/>.
 
-from .state import State, AssemblerError
+from .state import State
+from .exceptions import AssemblerError
+
+__all__ = ["directives",
+           "effects",
+           "datatypes",
+           "conditions",
+           "constants",
+           "registers",
+           "instructions",
+           "reserved_words"]
 
 directives = ("ORG", "FIT", "RES")
 effects = ("WC", "WZ", "WR", "NR")

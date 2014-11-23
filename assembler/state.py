@@ -10,14 +10,9 @@
 # the software.  If not, see <http://www.gnu.org/licenses/>.
 
 import re
+from .exceptions import AddressOutOfRangeError, AssemblerError
 
-class AddressOutOfRangeError(Exception): pass
-
-class AssemblerError(Exception):
-    def __init__(self, line_number : int, message : str):
-        Exception.__init__(self)
-        self.LineNumber = line_number
-        self.Message = message
+__all__ = ["State"]
 
 class State:
     label_re = re.compile(":?[_A-Z][_A-Z0-9]*", re.IGNORECASE);

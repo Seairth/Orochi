@@ -12,8 +12,11 @@ import sys
 import math
 from pyparsing import Literal, Word, Combine, Optional, Forward, ZeroOrMore
 from pyparsing import nums, alphanums, alphas, hexnums, quotedString
-from .state import State, AssemblerError
+from .state import State
+from .exceptions import AssemblerError
 from . import lang
+
+__all__ = ["ConstantExpression"]
 
 class ConstantExpression(object):
     """performs expression parsing and evaluation for PASM constant expressions"""
